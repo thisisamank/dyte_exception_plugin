@@ -53,7 +53,7 @@ After reading the problem statement and researching thoroughly this is what I ca
 
 On native side to listen to all of the unhandled exceptions there is a method on `Thread ` class `setDefaultUncaughtExceptionHandler(...)` which accepts an implementation of `Thread.UncaughtExceptionHandler`. For this I implemented this interface in the class `DyteExceptionHandler`.  `DyteExceptionHandler` is dependent on an interface `Reporter` which is used to send callbacks to it. 
 
-`DyteExceptionHandler` is set as default exception handler for all unhandled exceptions. It is done in the `MainActivity` class. `MainActivity` contains a reference to `MethodChannel` which is used to send data to flutter side. It also contains an Inner class `ExceptionReporter` which is an implementation of `Reporter`. This class is used to invoke method channel.
+`DyteExceptionHandler` is set as default exception handler for all unhandled exceptions. It is done in the `DyteChallengePlugin` class. `DyteChallengePlugin` contains a reference to `MethodChannel` which is used to send data to flutter side. It also contains an Inner class `ExceptionReporter` which is an implementation of `Reporter`. This class is used to invoke method channel.
 
 Once any exception is caught, the `uncaughtException(...)` method of `DyteExceptionHandler` class is called. This method creates an `DyteException` by converting `StackTrace` to message and then it calls `report` method of `Reporter`.  While creating the object of `DyteExceptionHandler` the concrete implementation of `Reporter` is injected as `ExceptionReporter`. So this in turns invoke method channel and sends the exception to flutter side.
 
