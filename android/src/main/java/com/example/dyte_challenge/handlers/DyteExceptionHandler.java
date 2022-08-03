@@ -1,8 +1,8 @@
-package com.example.dyte_challenge_example.handlers;
+package com.example.dyte_challenge.handlers;
 
 import androidx.annotation.NonNull;
 
-import com.example.dyte_challenge_example.exception.DyteException;
+import com.example.dyte_challenge.exception.DyteException;
 
 public class DyteExceptionHandler implements Thread.UncaughtExceptionHandler {
     final private Reporter reporter;

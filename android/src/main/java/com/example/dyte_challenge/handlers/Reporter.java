@@ -1,4 +1,4 @@
-package com.example.dyte_challenge_example.handlers;
+package com.example.dyte_challenge.handlers;
 
 public interface Reporter {
     void report(String data);

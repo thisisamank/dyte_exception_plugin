@@ -1,4 +1,4 @@
-package com.example.dyte_challenge_example.constants;
+package com.example.dyte_challenge.constants;
 
 public class Constants {
     private Constants(){}

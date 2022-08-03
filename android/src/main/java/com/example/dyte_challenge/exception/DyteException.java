@@ -1,4 +1,4 @@
-package com.example.dyte_challenge_example.exception;
+package com.example.dyte_challenge.exception;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
