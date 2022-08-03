@@ -17,7 +17,7 @@ class DyteExceptionLogger {
       if (call.method == Constants.functionName) {
         await ExceptionLoggerFacade.sendDataToServer(call.arguments);
       }
-      return Future.value("Success!");
+      return Future.value();
     });
   }
 }
