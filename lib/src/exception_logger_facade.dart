@@ -1,9 +1,14 @@
 import 'package:dyte_challenge/src/dyte_exception.dart';
 import 'package:dyte_challenge/src/http_service.dart';
 import 'package:dyte_challenge/src/log_exception_repository.dart';
+import 'package:dyte_challenge/src/response.dart';
 
 class ExceptionLoggerFacade {
-  static Future<void> sendDataToServer(String data) async {
+  /// [ExceptionLoggerFacade] is used to initialize all the components used to
+  /// log Exceptions sent by native android side. [data] in Parameter is converted to
+  /// [DyteException] to add more details.
+
+  static Future<Response> sendDataToServer(String data) async {
     final HttpService httpService = MockHttpService();
     final LogExceptionRepository logExceptionRepository =
         LogExceptionRepositoryImpl(httpService);
@@ -11,6 +16,6 @@ class ExceptionLoggerFacade {
       message: data,
       time: DateTime.now(),
     );
-    await logExceptionRepository.sendDataToServer(dyteException);
+    return await logExceptionRepository.sendDataToServer(dyteException);
   }
 }

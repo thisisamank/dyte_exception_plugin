@@ -3,10 +3,14 @@ import 'dart:developer';
 import 'package:dyte_challenge/src/response.dart';
 
 abstract class HttpService {
+  /// [GET] request to the [url] provided
   Future<Response> get({required String url});
+
+  /// [POST] request to the server to the [url] provided with [data].
   Future<Response> post({required String url, dynamic data});
 }
 
+/// Mock implementation of [HttpService] to [log] all the details.
 class MockHttpService implements HttpService {
   final int _mockHttpResponseTime = 2;
   final String _successMessage = 'Request Successful';

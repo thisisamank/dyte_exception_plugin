@@ -17,11 +17,10 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   String _platformVersion = 'Unknown';
-  final _dyteExceptionLogger = DyteExceptionLogger();
   @override
   void initState() {
     super.initState();
-    _dyteExceptionLogger.init();
+    DyteExceptionLogger.init();
     initPlatformState();
   }
 
