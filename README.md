@@ -88,3 +88,7 @@ dyte_challenge:
 ```
 
 Initialise the plugin using `DyteExceptionLogger.init()`
+
+### Demo App
+
+Run the demo app by doing `flutter run`. The native example app contains `Timer`s which are used to raise exceptions on subsequent basis.
