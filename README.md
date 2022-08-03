@@ -62,3 +62,25 @@ Once any exception is caught, the `uncaughtException(...)` method of `DyteExcept
 The diagram below highlights important classes and their interaction.
 
 ![diagram](./public/android_diagram.png) 
+
+
+
+### Flutter side
+
+On receiving a call from native side we call a static method `sendDataToServer` with the arguments received in the `ExceptionLoggerFacade` . `ExceptionLoggerFacade` initialises all the objects and calls the `LogExceptionRepository.sendDataToServer(DyteException)` by converting the message received into an instance of `DyteException`. 
+
+As per the requirements we have to send a POST request. To mock that I have made a `MockHttpService` which can do `GET` and `POST` requests. This class simply logs the output to console and returns a mock `Response`.
+
+
+
+## Usage
+
+To use this plugin, simply include this in the `pubspec.yaml` file
+
+```yaml
+dyte_challenge:
+  git: 
+    url: https://github.com/thisisamank/dyte_exception_plugin
+```
+
+Initialise the plugin using `DyteExceptionLogger.init()`
