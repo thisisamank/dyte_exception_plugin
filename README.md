@@ -71,6 +71,10 @@ On receiving a call from native side we call a static method `sendDataToServer` 
 
 As per the requirements we have to send a POST request. To mock that I have made a `MockHttpService` which can do `GET` and `POST` requests. This class simply logs the output to console and returns a mock `Response`.
 
+This is the logging it does: 
+
+![Logging screenshot](./public/screenshot.png)
+
 
 
 ## Usage
